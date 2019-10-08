@@ -23,7 +23,7 @@ export default class Signup extends Component {
     e.preventDefault()
     let data = {
       username: this.state.username,
-      name: this.state.name,
+      // name: this.state.name,
       password: this.state.password,
     }
     api
@@ -48,14 +48,14 @@ export default class Signup extends Component {
             onChange={this.handleInputChange}
           />{' '}
           <br />
-          Name:{' '}
+          {/* Name:{' '}
           <input
             type="text"
             value={this.state.name}
             name="name"
             onChange={this.handleInputChange}
           />{' '}
-          <br />
+          <br /> */}
           Password:{' '}
           <input
             type="password"
