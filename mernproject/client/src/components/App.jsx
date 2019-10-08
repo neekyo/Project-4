@@ -13,15 +13,7 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      id: "",
-      name: "",
-      tagline: "",
-      description: "",
-      image_url: "",
-      abv: "",
-      ibu: "",
-      ingredients: "",
-      food_pairing: "",
+      countries: [],
     }
   }
 
