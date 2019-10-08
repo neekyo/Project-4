@@ -8,12 +8,22 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import api from '../api'
 import logo from '../logo.svg'
+import Beers from './pages/Beers'
+import Breweries from './pages/Breweries'
 
 export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      countries: [],
+      id: "",
+      name: "",
+      tagline: "",
+      description: "",  
+      image_url: "",
+      abv: "",
+      ibu: "",
+      ingredients: "",
+      food_pairing: "",
     }
   }
 
@@ -30,6 +40,8 @@ export default class App extends Component {
           <NavLink to="/" exact>
             Home
           </NavLink>
+          <NavLink to="/beers">Beers</NavLink>
+          <NavLink to="/breweries">Breweries</NavLink>
           <NavLink to="/countries">Countries</NavLink>
           <NavLink to="/add-country">Add country</NavLink>
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
@@ -45,6 +57,9 @@ export default class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/countries" component={Countries} />
           <Route path="/add-country" component={AddCountry} />
+
+          <Route path="/breweries" component={Breweries} />
+          <Route path="/beers" component={Beers} />
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
           <Route path="/secret" component={Secret} />
