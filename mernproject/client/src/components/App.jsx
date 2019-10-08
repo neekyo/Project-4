@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Route, Link, NavLink, Switch } from 'react-router-dom'
 import Home from './pages/Home'
-import Breweries from './pages/Breweries'
-import AddBeer from './pages/AddCountry'
+import Countries from './pages/Countries'
+import AddCountry from './pages/AddCountry'
 import Secret from './pages/Secret'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
@@ -43,9 +43,8 @@ export default class App extends Component {
         </header>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/beers" component={Beers} />
-          <Route path="/breweries" component={Breweries} />
-          <Route path="/add-beer" component={AddBeer} />
+          <Route path="/countries" component={Countries} />
+          <Route path="/add-country" component={AddCountry} />
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
           <Route path="/secret" component={Secret} />
