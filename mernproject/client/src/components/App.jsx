@@ -7,9 +7,10 @@ import Secret from './pages/Secret'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import api from '../api'
-import logo from '../logo.svg'
 import Beers from './pages/Beers'
 import Breweries from './pages/Breweries'
+import Navbar from './pages/Navbar'
+import Footer from './pages/Footer'
 
 export default class App extends Component {
   constructor(props) {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import api from '../../api'
 import axios from 'axios'
 
 export default class Beers extends Component {
@@ -28,7 +27,7 @@ export default class Beers extends Component {
       <div className="Beers">
         {this.state.beers.map((eachBeer, i) => (
           <div className = "eachBeer">
-          <img key = {i} src={eachBeer.image_url}/>
+          <img key = {i} src={eachBeer.image_url} alt=""/>
           <ul className = "beerDeets">
           <p key={i}>Name: {eachBeer.name}</p>
           <p key={i}>ABV: {eachBeer.abv}%</p>
