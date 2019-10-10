@@ -97,3 +97,29 @@ body {
     color: $primary;
   }
 }
+
+.eachBeer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+}
+
+.eachBeer img {
+  height: 200px;
+}
+
+.Beers {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.beerDeets {
+  width: 75%;
+}
+
+.background {
+  background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)),
+   url("http://www.frankenmuthbrewery.com/blog/wp-content/uploads/2012/09/beer-twitter-backgrounds-1b.jpg");
+  
+  
+}

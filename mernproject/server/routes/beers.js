@@ -4,19 +4,19 @@ const Beers = require('../models/Beers')
 const router = express.Router()
 const axios = require('axios')
 
+const JSON = require('circular-json');
 
 router.get('/', (req, res, next) => {
-
-    axios.get('https://api.punkapi.com/v2/beers/1')
+  // let allBeers = []
+  ({})
     .then((response) => {
-      console.log(response.data)
-    });
-
-  Beers.find()
-    .then(beers => {
-      res.json(beers)
+      res.json(response);
     })
-    .catch(err => next(err))
+    // .then(beers => {
+    //   Beers.create(beers)
+    //   console.log("success")
+    // })
+    // .catch(err => next(err))
 })
 
 router.post('/', (req, res, next) => {

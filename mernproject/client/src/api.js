@@ -71,6 +71,12 @@ export default {
       .then(res => res.data)
       .catch(errHandler)
   },
+  getBeers() {
+    return service
+      .get('/beers')
+      .then(res => res.data)
+      .catch(errHandler)
+  },
 
   addCountry(body) {
     return service
