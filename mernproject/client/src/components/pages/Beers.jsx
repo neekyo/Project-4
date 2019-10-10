@@ -12,20 +12,20 @@ export default class Beers extends Component {
 
   render() {
     return (
-        <div className = "background">
+      <div className = "background">
         <h2>List of beers</h2>
       <div className="Beers">
         {this.state.beers.map((eachBeer, i) => (
           <div className = "eachBeer">
           <img key = {i} src={eachBeer.image_url}/>
           <ul className = "beerDeets">
-          <li key={i}>{eachBeer.name}</li>
-          <li key={i}>{eachBeer.abv}</li>
-          <li key={i}>{eachBeer.tagline}</li>
+          <p key={i}>Name: {eachBeer.name}</p>
+          <p key={i}>ABV: {eachBeer.abv}%</p>
+          <p key={i}>Tag: {eachBeer.tagline}</p>
           </ul>
           </div>
         ))}
-        </div>
+      </div>
       </div>
     )
   }

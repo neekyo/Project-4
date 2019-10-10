@@ -35,8 +35,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">MERN Boilerplate</h1>
+          <h1 className="App-title">Beertastic</h1>
           <NavLink to="/" exact>
             Home
           </NavLink>
@@ -57,7 +56,6 @@ export default class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/countries" component={Countries} />
           <Route path="/add-country" component={AddCountry} />
-
           <Route path="/breweries" component={Breweries} />
           <Route path="/beers" component={Beers} />
           <Route path="/signup" component={Signup} />

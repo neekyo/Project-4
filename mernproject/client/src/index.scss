@@ -47,9 +47,12 @@ body {
   }
 
   .App-header {
-    background-color: $primary;
+    background-color: gray;
     padding: 20px;
     color: white;
+    width: 100%; 
+    background-size: cover;
+    height: 100px;
 
     a {
       color: white;
@@ -111,15 +114,21 @@ body {
 .Beers {
   display: flex;
   flex-wrap: wrap;
+  text-align: left;
+  margin: 5px;
+  padding: 10px;
+  height: 50%;
 }
 
 .beerDeets {
-  width: 75%;
+  width: 50%;
+  box-shadow: 10px 5px 5px gray;
+  border-radius: 10px;
+  height: auto;
 }
 
-.background {
-  background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)),
-   url("http://www.frankenmuthbrewery.com/blog/wp-content/uploads/2012/09/beer-twitter-backgrounds-1b.jpg");
-  
-  
+.Home img {
+  height: 725px;
+  width: 100%;
 }
+
