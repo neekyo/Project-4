@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const beersSchema = new mongoose.Schema({
+const beerSchema = new mongoose.Schema({
   id: Number,
   name: String,
   tagline: String,
@@ -12,6 +12,6 @@ const beersSchema = new mongoose.Schema({
   food_pairing: [String],
 })
 
-const Beers = mongoose.model('Beers', beersSchema)
+const Beer = mongoose.model('Beer', beerSchema)
 
-module.exports = Beers;
+module.exports = Beer;

@@ -8,7 +8,7 @@ const userSchema = new Schema({
   googleID: String,
   avatar: String,
   googlePic: String,
-  profileImage: {type: String, default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyAV7m0L9Rc5P4AMI64BSir0BYOvkPU0vNSnSx0-6vhYDyS9X7"},
+  profileImage: {type: String, default: ""},
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 }); 

@@ -7,13 +7,24 @@ export default class Beers extends Component {
     super(props)
     this.state = {
       beers: [],
-    }
+      // filteredBeers: beers,
+      // allBeers: beers,
+    } 
   }
 
   render() {
     return (
       <div className = "background">
-        <h2>List of beers</h2>
+        <h2>Brews</h2>
+      <form className="brewSearch">
+      <input
+        onChange={this.searchBeers} 
+        placeholder=" Search"
+        id="search"
+        type="text"
+        className='search'
+      />
+      </form>
       <div className="Beers">
         {this.state.beers.map((eachBeer, i) => (
           <div className = "eachBeer">
@@ -41,4 +52,14 @@ export default class Beers extends Component {
       .catch(err => console.log(err))
   }
 }
+
+// searchBeers = (e) => {
+//   let search = e.target.value
+//   let filteredBeers = this.state.allBeers.filter(entry => {
+//     return entry.name.toLowerCase().includes(search.toLowerCase())
+//   });
+//   this.setState({
+//     filteredBeers
+//   });    
+// };
 

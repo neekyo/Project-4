@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const breweriesSchema = new Schema({
+const brewerySchema = new Schema({
   address: String,
   city: String,
   province: String, //actually just a state (usually)
   name: String,
-  // website: String, might use website l8r
+  // website: String, 
 });
 
-const Breweries = mongoose.model("Breweries", breweriesSchema);
-module.exports = Breweries;
+const Brewery = mongoose.model("Brewery", brewerySchema);
+module.exports = Brewery;

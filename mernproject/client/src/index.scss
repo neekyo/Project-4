@@ -50,7 +50,7 @@ body {
     background-color: gray;
     padding: 20px;
     color: white;
-    width: 100%; 
+    width: 100%;
     background-size: cover;
     height: 100px;
 
@@ -109,15 +109,17 @@ body {
 
 .eachBeer img {
   height: 200px;
+  width: auto;
 }
 
 .Beers {
   display: flex;
   flex-wrap: wrap;
   text-align: left;
-  margin: 5px;
+  margin: 20px 0 20px 60px;
   padding: 10px;
   height: 50%;
+
 }
 
 .beerDeets {
@@ -132,3 +134,12 @@ body {
   width: 100%;
 }
 
+.brewSearch {
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  width: 40%;
+  border-radius: 5px;
+}

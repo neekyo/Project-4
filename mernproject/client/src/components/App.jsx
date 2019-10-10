@@ -41,8 +41,6 @@ export default class App extends Component {
           </NavLink>
           <NavLink to="/beers">Beers</NavLink>
           <NavLink to="/breweries">Breweries</NavLink>
-          <NavLink to="/countries">Countries</NavLink>
-          <NavLink to="/add-country">Add country</NavLink>
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
           {api.isLoggedIn() && (
@@ -50,7 +48,7 @@ export default class App extends Component {
               Logout
             </Link>
           )}
-          <NavLink to="/secret">Secret</NavLink>
+          {api.isAdmin && <NavLink to="/secret">Secret</NavLink>}
         </header>
         <Switch>
           <Route path="/" exact component={Home} />
@@ -67,3 +65,4 @@ export default class App extends Component {
     )
   }
 }
+
