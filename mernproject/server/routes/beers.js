@@ -1,5 +1,5 @@
 const express = require('express')
-const Beers = require('../models/Beers')
+const Beers = require('../models/Beer')
 
 const router = express.Router()
 const axios = require('axios')

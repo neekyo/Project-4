@@ -78,6 +78,10 @@ export default {
       .catch(errHandler)
   },
 
+  getBreweries(){
+    
+  },
+
   addCountry(body) {
     return service
       .post('/countries', body)

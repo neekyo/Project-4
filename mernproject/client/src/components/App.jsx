@@ -67,3 +67,26 @@ export default class App extends Component {
   }
 }
 
+
+let users = ['a','b','c','d','e','f','g']
+let index = Math.floor(Math.random()*users.length)
+let winner = users[index]
+
+console.log('our winner is ', winner)
+
+let min = index*(360/users.length)
+let max = (index+1)*(360/users.length)
+
+let rotate = getRandomArbitrary(min, max) + Math.floor(Math.random()*7)*360
+
+console.log(rotate)
+
+
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+
+
+

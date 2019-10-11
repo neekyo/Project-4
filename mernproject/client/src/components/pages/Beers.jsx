@@ -26,12 +26,12 @@ export default class Beers extends Component {
       </form>
       <div className="Beers">
         {this.state.beers.map((eachBeer, i) => (
-          <div className = "eachBeer">
-          <img key = {i} src={eachBeer.image_url} alt=""/>
+          <div key={i} className = "eachBeer">
+          <img  src={eachBeer.image_url} alt=""/>
           <ul className = "beerDeets">
-          <p key={i}>Name: {eachBeer.name}</p>
-          <p key={i}>ABV: {eachBeer.abv}%</p>
-          <p key={i}>Tag: {eachBeer.tagline}</p>
+          <p key={i+'a'}>Name: {eachBeer.name}</p>
+          <p key={i+'b'}>ABV: {eachBeer.abv}%</p>
+          <p key={i+'c'}>Tag: {eachBeer.tagline}</p>
           </ul>
           </div>
         ))}
