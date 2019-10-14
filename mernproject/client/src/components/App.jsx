@@ -11,6 +11,7 @@ import Beers from './pages/Beers'
 import Breweries from './pages/Breweries'
 import NavbarPage from './pages/NavbarPage'
 import Footer from './pages/Footer'
+import Spin from './pages/Spin'
 
 export default class App extends Component {
   constructor(props) {
@@ -36,7 +37,8 @@ export default class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Beertastic</h1>
+        <NavLink to="/" exact></NavLink>
+          {/* <h1 className="App-title">Beertastic</h1>
           <NavLink to="/" exact>
             Home
           </NavLink>
@@ -49,13 +51,14 @@ export default class App extends Component {
               Logout
             </Link>
           )}
-          {api.isAdmin && <NavLink to="/secret">Secret</NavLink>}
+          {api.isAdmin && <NavLink to="/secret">Secret</NavLink>} */}
         </header>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/countries" component={Countries} />
           <Route path="/add-country" component={AddCountry} />
           <Route path="/breweries" component={Breweries} />
+          <Route path="/spin" component={Spin} />
           <Route path="/beers" component={Beers} />
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
@@ -67,22 +70,7 @@ export default class App extends Component {
   }
 }
 
-let users = ['a','b','c','d','e','f','g']
-let index = Math.floor(Math.random()*users.length)
-let winner = users[index]
 
-console.log('our winner is ', winner)
-
-let min = index*(360/users.length)
-let max = (index+1)*(360/users.length)
-
-let rotate = getRandomArbitrary(min, max) + Math.floor(Math.random()*7)*360
-
-console.log(rotate)
-
-function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
-}
 
 
 

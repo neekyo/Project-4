@@ -4,7 +4,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="Home">
-      <img src="http://www.ucatx.cat/wallpic/full/40/407119/beer-wallpaper-hd.jpg" alt=""></img>
+      <img src="https://c0.wallpaperflare.com/preview/986/807/681/beer-brewery-pints-glasses.jpg" alt=""></img>
       </div>
     )
   }

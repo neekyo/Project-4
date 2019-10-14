@@ -47,15 +47,16 @@ body {
   }
 
   .App-header {
-    background-color: gray;
+    background-color: white;
     padding: 20px;
-    color: white;
+    color: #363A36;
     width: 100%;
     background-size: cover;
     height: 100px;
+    padding-bottom: 10px;
 
     a {
-      color: white;
+      color: #363A36;
       padding: 0 5px;
       text-decoration: unset;
     }
@@ -88,7 +89,8 @@ body {
 // Style for Home component
 .Home {
   p {
-    font-size: 1.2em;
+    font-size: 1.2  em;
+    filter: grayscale(100%); 
   }
 }
 
@@ -142,4 +144,14 @@ body {
 .search {
   width: 40%;
   border-radius: 5px;
+}
+
+
+.players {
+  border: 1px solid blue;
+}
+
+
+li{
+  /* height: 200px; */
 }
