@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Link, NavLink, Switch } from 'react-router-dom'
 import Home from './pages/Home'
-import Countries from './pages/Countries'
-import AddCountry from './pages/AddCountry'
 import Secret from './pages/Secret'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
@@ -37,8 +35,9 @@ export default class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Beertastic</h1>
-          <NavLink to="/"> Home </NavLink>
+        <NavbarPage/>
+          {/* <h1 className="App-title">Beertastic</h1>
+          <NavLink to="/">Home</NavLink>
           <NavLink to="/beers">Beers</NavLink>
           <NavLink to="/breweries">Breweries</NavLink>
           <NavLink to="/spin">Spin</NavLink>
@@ -49,12 +48,10 @@ export default class App extends Component {
               Logout
             </Link>
           )}
-          {api.isAdmin && <NavLink to="/secret">Secret</NavLink>}
+          {api.isAdmin && <NavLink to="/secret">Secret</NavLink>} */}
         </header>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/countries" component={Countries} />
-          <Route path="/add-country" component={AddCountry} />
+          <Route path="/" exact component={Home} />          
           <Route path="/breweries" component={Breweries} />
           <Route path="/spin" component={Spin} />
           <Route path="/beers" component={Beers} />

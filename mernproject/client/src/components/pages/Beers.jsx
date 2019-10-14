@@ -6,10 +6,33 @@ export default class Beers extends Component {
     super(props)
     this.state = {
       beers: [],
-      // filteredBeers: beers,
-      // allBeers: beers,
+      filteredBeers: [],
     } 
   }
+
+  componentDidMount() {
+    axios.get(`https://api.punkapi.com/v2/beers?page=1&per_page=80`)
+    .then((response) => {
+      console.log(response.data)
+      this.setState({
+        beers: response.data,
+        filteredBeers: response.data
+      })
+    })
+      .catch(err => console.log(err))
+  }
+
+  searchBeers = (e) => {
+    let search = e.target.value
+    let filteredBeers = this.state.beers.filter(entry => {
+      return entry.name.toLowerCase().includes(search.toLowerCase())
+    });
+    this.setState({
+      filteredBeers: filteredBeers
+    });    
+    console.log(this.state.filteredBeers)
+  };
+  
 
   render() {
     return (
@@ -18,14 +41,14 @@ export default class Beers extends Component {
       <form className="brewSearch">
       <input
         onChange={this.searchBeers} 
-        placeholder=" Search"
+        placeholder=" Search all brews"
         id="search"
         type="text"
         className='search'
       />
       </form>
       <div className="Beers">
-        {this.state.beers.map((eachBeer, i) => (
+        {this.state.filteredBeers.map((eachBeer, i) => (
           <div key={i} className = "eachBeer">
           <img  src={eachBeer.image_url} alt=""/>
           <ul className = "beerDeets">
@@ -40,25 +63,7 @@ export default class Beers extends Component {
     )
   }
   
-  componentDidMount() {
-    axios.get(`https://api.punkapi.com/v2/beers?page=1&per_page=80`)
-    .then((response) => {
-      console.log(response.data)
-      this.setState({
-        beers: response.data,
-      })
-    })
-      .catch(err => console.log(err))
-  }
+
 }
 
-// searchBeers = (e) => {
-//   let search = e.target.value
-//   let filteredBeers = this.state.allBeers.filter(entry => {
-//     return entry.name.toLowerCase().includes(search.toLowerCase())
-//   });
-//   this.setState({
-//     filteredBeers
-//   });    
-// };
 

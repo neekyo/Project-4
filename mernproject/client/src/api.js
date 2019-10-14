@@ -63,14 +63,6 @@ export default {
     return service.get('/logout')
   },
 
-  // This is an example on how to use this method in a different file
-  // api.getCountries().then(countries => { /* ... */ })
-  getCountries() {
-    return service
-      .get('/countries')
-      .then(res => res.data)
-      .catch(errHandler)
-  },
   getBeers() {
     return service
       .get('/beers')

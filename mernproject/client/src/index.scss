@@ -4,6 +4,7 @@ $primary: #32c3ff;
 
 // --------------------
 // Style reusable for all components
+
 body {
   margin: 0;
   padding: 0;
@@ -34,13 +35,12 @@ body {
   }
 
   .App-header {
-    background-color: white;
-    padding: 20px;
+    padding: 10px;
     color: #363A36;
     width: 100%;
     background-size: cover;
-    height: 100px;
-    padding-bottom: 10px;
+    height: 80px;
+    border-bottom: 5px solid orange;
 
     a {
       color: #363A36;
@@ -97,8 +97,9 @@ body {
 }
 
 .eachBeer img {
-  height: 200px;
-  width: auto;
+  height: 200px;  
+  width: 63px;
+  margin: 15px;
 }
 
 .Beers {
@@ -108,7 +109,6 @@ body {
   margin: 20px 0 20px 60px;
   padding: 10px;
   height: 50%;
-
 }
 
 .beerDeets {
@@ -130,5 +130,55 @@ body {
 
 .search {
   width: 40%;
-  border-radius: 5px;
+  border-radius: 5px;   
+} 
+
+.Signup {
+  margin-top: 70px;
+}
+
+.hoverButton {
+  background-color: lightgray;
+  transition: .5s;
+}
+
+.hoverButton:hover {
+  background-color: orange;
+  transition: .5s;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+input:focus {
+  outline: 5px auto orange;
+}
+
+.navbar-dark .navbar-nar .navbar-link {
+  color: #363A36 !important;
+}
+
+.navbar a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #363A36;
+}
+
+.navbar a:hover {
+  color: orange;
+}
+
+a.nav-item.logo {
+  font-size: 24px;
+}
+
+.orange {
+  color: orange;
+}
+
+a.waves-effect.waves-light {
+  border: 1px solid black;
+  margin-right: 50px;
+  color: green;
 }

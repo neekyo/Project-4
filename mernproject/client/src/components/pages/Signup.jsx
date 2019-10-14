@@ -38,9 +38,11 @@ export default class Signup extends Component {
   render() {
     return (
       <div className="Signup">
-        <h2>Signup</h2>
+        <h2>Sign up</h2>
+        <br />
         <form>
           Username:{' '}
+          <br />
           <input
             type="text"
             value={this.state.username}
@@ -48,7 +50,9 @@ export default class Signup extends Component {
             onChange={this.handleInputChange}
           />{' '}
           <br />
+          <br />
           Password:{' '}
+          <br />
           <input
             type="password"
             value={this.state.password}
@@ -56,7 +60,8 @@ export default class Signup extends Component {
             onChange={this.handleInputChange}
           />{' '}
           <br />
-          <button onClick={e => this.handleClick(e)}>Signup</button>
+          <br />
+          <button className="hoverButton" onClick={e => this.handleClick(e)}>Sign up</button>
         </form>
         {this.state.message && (
           <div className="info info-danger">{this.state.message}</div>
