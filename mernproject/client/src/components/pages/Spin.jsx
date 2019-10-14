@@ -11,12 +11,9 @@ export default class Spin extends Component {
         position: 'fixed',
         top: '35vh',
         left: '47vw'
-
-
       },
-     users : [{ name: 'a'}, {name: 'b'}, {name: 'c'}, {name: 'd'}, {name: 'e'}, {name:'f'}, { name: 'a'}, {name: 'b'}, {name: 'c'}, {name: 'd'}, {name: 'e'}, {name:'f'}]
-       // users : [{ name: 'a'}, {name: 'b'}]
-
+     winner: {},
+     users : [{ name: 'a'}, {name: 'b'}, {name: 'c'}, {name: 'd'}, {name: 'e'}]
     }
 
     componentDidMount() {
@@ -41,25 +38,26 @@ export default class Spin extends Component {
 
       let min = index*(360/users.length)
       let max = (index+1)*(360/users.length)
-
       let rotate = getRandomArbitrary(min, max) + Math.floor(Math.random()*20)*360  - ((360/users.length)*.5)
-      //454545
-
       let style = {...this.state.style}
       
       style['transform'] = `rotate(${rotate}deg)`
       
       this.setState({style})
 
+      setTimeout(()=>{
+        this.setWinner(winner)
+      }, 5000)
+  }
 
+  setWinner = (winner) => {
+    this.setState({winner})
   }
 
   drawUsers = () => {
-
     let users = [...this.state.users]
     users = arrangeElementsInCircle(users, window.innerHeight/2, window.innerWidth/2, 300)
     console.log(users)
-
 
     return users.map(eachUser => {
       let style = {
@@ -73,7 +71,6 @@ export default class Spin extends Component {
   }
 
   render() {
-
     return (
       <div>
         <img style={this.state.style} src={this.state.beer.image_url} alt=""/>
@@ -82,6 +79,7 @@ export default class Spin extends Component {
         <br></br>
         <br></br>
         <br></br>
+        The winner is {this.state.winner.name} 
         <ul className="players">
         {this.drawUsers()}
         </ul> 
@@ -95,13 +93,12 @@ function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
   }
 
-
-  function arrangeElementsInCircle (elements, x, y, r) {
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].scaleX = 1 / elements.length
-        elements[i].scaleY = 1 / elements.length
-        elements[i].x = (x + r * Math.cos((2 * Math.PI) * i/elements.length))
-        elements[i].y = (y + r * Math.sin((2 * Math.PI) * i/elements.length))
-    }
-    return elements
+function arrangeElementsInCircle (elements, x, y, r) {
+  for (var i = 0; i < elements.length; i++) {
+      elements[i].scaleX = 1 / elements.length
+      elements[i].scaleY = 1 / elements.length
+      elements[i].x = (x + r * Math.cos((2 * Math.PI) * i/elements.length))
+      elements[i].y = (y + r * Math.sin((2 * Math.PI) * i/elements.length))
+  }
+  return elements;
 }

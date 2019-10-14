@@ -37,13 +37,11 @@ export default class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-        <NavLink to="/" exact></NavLink>
-          {/* <h1 className="App-title">Beertastic</h1>
-          <NavLink to="/" exact>
-            Home
-          </NavLink>
+          <h1 className="App-title">Beertastic</h1>
+          <NavLink to="/"> Home </NavLink>
           <NavLink to="/beers">Beers</NavLink>
           <NavLink to="/breweries">Breweries</NavLink>
+          <NavLink to="/spin">Spin</NavLink>
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
           {api.isLoggedIn() && (
@@ -51,7 +49,7 @@ export default class App extends Component {
               Logout
             </Link>
           )}
-          {api.isAdmin && <NavLink to="/secret">Secret</NavLink>} */}
+          {api.isAdmin && <NavLink to="/secret">Secret</NavLink>}
         </header>
         <Switch>
           <Route path="/" exact component={Home} />

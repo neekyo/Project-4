@@ -3,7 +3,6 @@ const Beers = require('../models/Beer')
 
 const router = express.Router()
 const axios = require('axios')
-
 const JSON = require('circular-json');
 
 router.get('/', (req, res, next) => {
