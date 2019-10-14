@@ -9,7 +9,7 @@ import Signup from './pages/Signup'
 import api from '../api'
 import Beers from './pages/Beers'
 import Breweries from './pages/Breweries'
-import Navbar from './pages/Navbar'
+import NavbarPage from './pages/NavbarPage'
 import Footer from './pages/Footer'
 
 export default class App extends Component {
@@ -67,7 +67,6 @@ export default class App extends Component {
   }
 }
 
-
 let users = ['a','b','c','d','e','f','g']
 let index = Math.floor(Math.random()*users.length)
 let winner = users[index]
@@ -80,8 +79,6 @@ let max = (index+1)*(360/users.length)
 let rotate = getRandomArbitrary(min, max) + Math.floor(Math.random()*7)*360
 
 console.log(rotate)
-
-
 
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;

@@ -79,7 +79,10 @@ export default {
   },
 
   getBreweries(){
-    
+    return service
+      .get('/breweries')
+      .then(res => res.data)
+      .catch(errHandler)
   },
 
   addCountry(body) {
