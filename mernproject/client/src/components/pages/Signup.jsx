@@ -42,6 +42,7 @@ const FormPage = () => {
                     rounded
                     type='button'
                     className='btn-block z-depth-1'
+                    onClick={e => this.handleClick(e)}
                   >
                     Sign up
                   </MDBBtn>
@@ -87,21 +88,15 @@ export default FormPage;
 //     })
 //   }
 
-//   handleClick(e) {
-//     e.preventDefault()
-//     let data = {
-//       username: this.state.username,
-//       name: this.state.name,
-//       password: this.state.password,
-//     }
-//     api
-//       .signup(data)
-//       .then(result => {
-//         console.log('SUCCESS!')
-//         this.props.history.push('/login') // Redirect to the log in
-//       })
-//       .catch(err => this.setState({ message: err.toString() }))
-//   }
+// handleClick(e) {
+//   e.preventDefault()
+//   api
+//     .signup(this.state.username, this.state.password)
+//     .then(result => {
+//       console.log('SUCCESS!')
+//       this.props.history.push('/login') // Redirect to the login
+//     .catch(err => this.setState({ message: err.toString() }))
+// }
 
 //   render() {
 //     return (

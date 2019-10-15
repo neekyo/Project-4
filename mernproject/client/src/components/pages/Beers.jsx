@@ -32,6 +32,10 @@ export default class Beers extends Component {
     });    
     console.log(this.state.filteredBeers)
   };
+
+  addFavorite = (e) => {
+    
+  }
   
 
   render() {
@@ -56,14 +60,13 @@ export default class Beers extends Component {
           <p key={i+'b'}>ABV: {eachBeer.abv}%</p>
           <p key={i+'c'}>Tag: {eachBeer.tagline}</p>
           </ul>
+          <button className='favorite button' onclick="addFavorite()">Add Favorite</button>
           </div>
         ))}
       </div>
       </div>
     )
   }
-  
-
 }
 
 

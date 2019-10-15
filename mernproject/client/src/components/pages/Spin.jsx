@@ -73,7 +73,7 @@ export default class Spin extends Component {
   render() {
     return (
       <div>
-      <button className="button spin" onClick={this.spinTheBottle}>Spin</button>
+      <button className="button spin" onClick={this.spinTheBottle}>Spin the bottle!</button>
       <div className="winner">
       <h5><b>The winner is: {this.state.winner.name}</b></h5>
       <div className="board">
