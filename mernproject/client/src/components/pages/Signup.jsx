@@ -85,7 +85,7 @@ render(){
               <MDBCol md='12'>
                 <p className='font-small white-text d-flex justify-content-end'>
                   Have an account?
-                  <a href='/login' className='white-text ml-1 font-weight-bold'>
+                  <a href='/login' className='white-text ml-1 font-weight-bold white'>
                     Log in
                   </a>
                 </p>
