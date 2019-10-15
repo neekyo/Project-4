@@ -30,11 +30,11 @@ $ git remote add origin <https://github.com/user/my-project.git>
 You should have a `server/.env` file, with for example the following values:
 ```
 PORT=5000
-SESSION_SECRET=anyValue
+SESSION_profile=anyValue
 MONGODB_URI=......
 CLOUDINARY_CLOUD_NAME=......
 CLOUDINARY_API_KEY=......
-CLOUDINARY_API_SECRET=......
+CLOUDINARY_API_profile=......
 ```
 
 
@@ -118,7 +118,7 @@ README.md
 
 - `router.post('/signup')`: Route to create a new user
 - `router.post('/login')`: Route to send the user JWT 
-- `router.get('/secret')`: Route where the user need to be authenticated
+- `router.get('/profile')`: Route where the user need to be authenticated
 
 
 ### `server/routes/users.js`
@@ -212,11 +212,11 @@ res.status(401).json({ message: "You must be connected" })
 ```
 **Example on the client side**
 ```js
-// Call to api.getSecret()
-//   In case of success, state.secret is saved
+// Call to api.getprofile()
+//   In case of success, state.profile is saved
 //   In case of error (status code 4xx or 5xx), state.message contains the message from the error
-api.getSecret()
-  .then(data => this.setState({ secret: data.secret }))
+api.getprofile()
+  .then(data => this.setState({ profile: data.profile }))
   .catch(err => this.setState({ message: err.toString() }))
 ```
 

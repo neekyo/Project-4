@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Link, NavLink, Switch } from 'react-router-dom'
 import Home from './pages/Home'
-import Secret from './pages/Secret'
+import Profile from './pages/Profile'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import api from '../api'
@@ -48,16 +48,16 @@ export default class App extends Component {
               Logout
             </Link>
           )}
-          {api.isAdmin && <NavLink to="/secret">Secret</NavLink>} */}
+          {api.isAdmin && <NavLink to="/profile">profile</NavLink>} */}
         </header>
         <Switch>
           <Route path="/" exact component={Home} />          
           <Route path="/breweries" component={Breweries} />
           <Route path="/spin" component={Spin} />
           <Route path="/beers" component={Beers} />
-          <Route path="/signup" component={Signup} />
+          <Route path="/signup" component={Signup} /> 
           <Route path="/login" component={Login} />
-          <Route path="/secret" component={Secret} />
+          <Route path="/profile" component={Profile} />
           <Route render={() => <h2>404</h2>} />
         </Switch>
       </div>

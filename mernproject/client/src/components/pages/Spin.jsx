@@ -83,7 +83,7 @@ export default class Spin extends Component {
         <ul className="players">
         {this.drawUsers()}
         </ul> 
-        <button onClick={this.spinTheBottle}>Spin</button>    
+        <button class="button" onClick={this.spinTheBottle}>Spin</button>    
       </div>
     )
   }

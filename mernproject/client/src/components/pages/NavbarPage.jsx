@@ -46,7 +46,7 @@ export default class NavbarPage extends Component {
           aria-labelledby="navbarDropdownMenuLink-333">
           <a className="dropdown-item" href="/signup">Sign up</a>
           <a className="dropdown-item" href="/login">Log in</a>
-          <a className="dropdown-item" href="/secret">Profile</a>
+          <a className="dropdown-item" href="/profile">Profile</a>
         </div>
       </li>
     </ul>

@@ -82,8 +82,8 @@ body {
 }
 
 // --------------------
-// Style for Secret component
-.Secret {
+// Style for profile component
+.profile {
   .result {
     font-size: 1.2em;
     color: $primary;
@@ -112,7 +112,7 @@ body {
 }
 
 .beerDeets {
-  width: 50%;
+  width: 55%;
   box-shadow: 10px 5px 5px gray;
   border-radius: 10px;
   height: auto;
@@ -133,8 +133,9 @@ body {
   border-radius: 5px;   
 } 
 
-.Signup {
-  margin-top: 70px;
+.signup {
+  margin-left: 57%;
+  margin-top: 10%;
 }
 
 .hoverButton {
@@ -177,8 +178,73 @@ a.nav-item.logo {
   color: orange;
 }
 
+.button:hover {
+  background-color: orange;
+}
+
 a.waves-effect.waves-light {
   border: 1px solid black;
   margin-right: 50px;
   color: green;
 }
+
+.form-dark .font-small {
+  font-size: 0.8rem; }
+
+.form-dark [type="radio"] + label,
+.form-dark [type="checkbox"] + label {
+  font-size: 0.8rem; }
+
+.form-dark [type="checkbox"] + label:before {
+  top: 2px;
+  width: 15px;
+  height: 15px; }
+
+.form-dark .md-form label {
+  color: #fff; }
+
+.form-dark input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #00C851;
+  -webkit-box-shadow: 0 1px 0 0 #00C851;
+  box-shadow: 0 1px 0 0 #00C851; }
+
+.form-dark input[type=text]:focus:not([readonly]) + label {
+  color: #fff; }
+
+.form-dark input[type=password]:focus:not([readonly]) {
+  border-bottom: 1px solid #00C851;
+  -webkit-box-shadow: 0 1px 0 0 #00C851;
+  box-shadow: 0 1px 0 0 #00C851; }
+
+.form-dark input[type=password]:focus:not([readonly]) + label {
+  color: #fff; }
+
+.form-dark input[type="checkbox"] + label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17px;
+  height: 17px;
+  z-index: 0;
+  border: 1.5px solid #fff;
+  border-radius: 1px;
+  margin-top: 2px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s; }
+
+.form-dark input[type="checkbox"]:checked + label:before {
+  top: -4px;
+  left: -3px;
+  width: 12px;
+  height: 22px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent #00c851 #00c851 transparent;
+  -webkit-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  transform: rotate(40deg);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%; }
