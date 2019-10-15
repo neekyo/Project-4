@@ -26,7 +26,7 @@ app.use(nocache())
 app.use(
   cors({
     origin: (origin, cb) => {
-      cb(null, origin && origin.startsWith('http://localhost:'))
+      cb(null, origin && true)
     },
     optionsSuccessStatus: 200,
     credentials: true,
@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, '../client/build')))
 // Enable authentication using session + passport
 app.use(
   session({
-    profile: process.env.SESSION_profile || 'irongenerator',
+    secret: process.env.SESSION_SECRET || 'irongenerator',
     resave: true,
     saveUninitialized: true,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
@@ -54,7 +54,6 @@ require('./passport')(app)
 
 app.use('/api', require('./routes/index'))
 app.use('/api', require('./routes/auth'))
-app.use('/api/beers', require('./routes/beers'))
 app.use('/api/breweries', require('./routes/breweries'))
 
 // For any routes that starts with "/api", catch 404 and forward to error handler
