@@ -91,6 +91,13 @@ export default {
       .catch(errHandler)
   },
 
+  getAllUsers() {
+    return service
+    .get('/getAllTheUsers')
+    .then(res => res.data)
+    .catch(errHandler)
+  },
+
   addPicture(file) {
     const formData = new FormData()
     formData.append('picture', file)
@@ -104,3 +111,5 @@ export default {
       .catch(errHandler)
   },
 }
+
+

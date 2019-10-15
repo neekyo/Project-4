@@ -1,7 +1,34 @@
-import React from "react";
+import React, { Component } from 'react'
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBInput } from 'mdbreact';
+import api from '../../api'
 
-const FormPage = () => {
+export default class FormPage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      username: '',
+      name: '',
+      password: '',
+      message: null,
+    }
+  }
+handleClick = (e) => {
+  console.log(this.state)
+  e.preventDefault()
+  api
+    .signup({username:this.state.username, password: this.state.password})
+    .then(result => {
+      console.log('SUCCESS!', result)
+      this.props.history.push('/login') // Redirect to the login
+    })
+    .catch(err => this.setState({ message: err.toString() }))
+}
+handleInputChange = (event) => {
+  this.setState({
+    [event.target.name]: event.target.value,
+  })
+}
+render(){
   return (
     <div className="sign">
     <MDBContainer>
@@ -26,11 +53,16 @@ const FormPage = () => {
                 group
                 type='text'
                 validate
+                name='username'
+                onChange={this.handleInputChange}
                 labelClass='white-text'
               />
               <MDBInput
                 label='Password'
                 group
+                onChange={this.handleInputChange}
+
+                name='password'
                 type='password'
                 validate
                 labelClass='white-text'
@@ -63,9 +95,9 @@ const FormPage = () => {
     </MDBContainer>
     </div>
   );
+  }
 };
 
-export default FormPage;
 
 // import React, { Component } from 'react'
 // import api from '../../api'

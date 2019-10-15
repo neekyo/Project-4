@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import api from '../../api'
 export default class Spin extends Component {
     state = {
       beers : [],
@@ -17,16 +17,21 @@ export default class Spin extends Component {
     }
 
     componentDidMount() {
-    axios.get(`https://api.punkapi.com/v2/beers?page=1&per_page=80`)
-    .then((response) => {
-      console.log(response.data)
-      let randomBeer = response.data[Math.floor(Math.random()*response.data.length)]
-      this.setState({
-        beers: response.data,
-        beer: randomBeer
+      axios.get(`https://api.punkapi.com/v2/beers?page=1&per_page=80`)
+      .then((response) => {
+        console.log(response.data)
+        let randomBeer = response.data[Math.floor(Math.random()*response.data.length)]
+        this.setState({
+          beers: response.data,
+          beer: randomBeer
+        })
+        
       })
-    })
       .catch(err => console.log(err))
+      api.getAllUsers()
+        .then(allUsers=>this.setState({users:allUsers})) //all users and return them 
+        .catch(err=>console.error(err))
+
   }
 
   spinTheBottle = ()=>{
@@ -66,7 +71,7 @@ export default class Spin extends Component {
         bottom: eachUser.x,
         left: eachUser.y,
       }
-      return <li style={style}> { eachUser.name }</li>
+      return <li style={style}> { eachUser.username }</li>
     })
   }
 
@@ -75,7 +80,7 @@ export default class Spin extends Component {
       <div>
       <button className="button spin" onClick={this.spinTheBottle}>Spin the bottle!</button>
       <div className="winner">
-      <h5><b>The winner is: {this.state.winner.name}</b></h5>
+      <h5><b>The winner is: {this.state.winner.username}</b></h5>
       <div className="board">
         <img style={this.state.style} src={this.state.beer.image_url} alt=""/>
         <ul className="players">
