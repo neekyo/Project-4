@@ -82,11 +82,11 @@ export default FormPage;
 //     this.handleInputChange = this.handleInputChange.bind(this)
 //   }
 
-//   handleInputChange(event) {
-//     this.setState({
-//       [event.target.name]: event.target.value,
-//     })
-//   }
+// handleInputChange(event) {
+//   this.setState({
+//     [event.target.name]: event.target.value,
+//   })
+// }
 
 // handleClick(e) {
 //   e.preventDefault()

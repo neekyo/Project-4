@@ -5,7 +5,9 @@ export default class NavbarPage extends Component {
     return (
 <React.Fragment>
 <nav className="mb-1 navbar navbar-expand-lg navbar-dark default-color">
-  <a className="nav-item logo" href="/"><span className="orange">[</span>Beertastic<span className="orange">]</span></a>
+  <a className="nav-item logo" href="/">
+  <img className='logo' src="./beer1.png" /> 
+  <span className="orange">[</span>Beertastic<span className="orange">]</span></a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
@@ -39,6 +41,7 @@ export default class NavbarPage extends Component {
           <i className="fab fa-google-plus-g"></i>
         </a>
       </li> */}
+      <img className='login' src="./login1.jpg" /> 
       Account
       <li className="nav-item dropdown">
         <div className="dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
