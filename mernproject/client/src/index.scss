@@ -39,7 +39,7 @@ body {
     color: #363A36;
     width: 100%;
     background-size: cover;
-    height: 80px;
+    height: 70px;
     border-bottom: 5px solid orange;
 
     a {
@@ -134,8 +134,15 @@ body {
 } 
 
 .signup {
-  margin-left: 57%;
+  margin-left: 59%;
   margin-top: 10%;
+}
+
+.sign {
+  background-image: url('http://yesofcorsa.com/wp-content/uploads/2018/08/Brewery-Wallpaper-HD.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
 }
 
 .hoverButton {
@@ -150,6 +157,7 @@ body {
 
 h2 {
   font-weight: bold;
+  margin-top: 15px;
 }
 
 input:focus {
@@ -176,6 +184,10 @@ a.nav-item.logo {
 
 .orange {
   color: orange;
+}
+
+.green {
+  color: #29A745;
 }
 
 .button:hover {
@@ -248,3 +260,17 @@ a.waves-effect.waves-light {
   -webkit-transform-origin: 100% 100%;
   -ms-transform-origin: 100% 100%;
   transform-origin: 100% 100%; }
+
+.spin {
+  margin: 20px;
+}
+
+.board {
+  margin-top: 50px;
+}
+
+.account {
+  margin-right: 130px;
+  font-size: 18px;
+  font-weight: bold;
+}

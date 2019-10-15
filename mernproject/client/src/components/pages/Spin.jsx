@@ -13,7 +13,7 @@ export default class Spin extends Component {
         left: '47vw'
       },
      winner: {},
-     users : [{ name: 'a'}, {name: 'b'}, {name: 'c'}, {name: 'd'}, {name: 'e'}]
+     users : [{ name: 'A'}, {name: 'B'}, {name: 'C'}, {name: 'D'}, {name: 'E'}]
     }
 
     componentDidMount() {
@@ -64,7 +64,7 @@ export default class Spin extends Component {
         position:'fixed', 
         color: 'red', 
         bottom: eachUser.x,
-        left: eachUser.y
+        left: eachUser.y,
       }
       return <li style={style}> { eachUser.name }</li>
     })
@@ -73,17 +73,16 @@ export default class Spin extends Component {
   render() {
     return (
       <div>
+      <button className="button spin" onClick={this.spinTheBottle}>Spin</button>
+      <div className="winner">
+      <h5><b>The winner is: {this.state.winner.name}</b></h5>
+      <div className="board">
         <img style={this.state.style} src={this.state.beer.image_url} alt=""/>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        The winner is {this.state.winner.name} 
         <ul className="players">
         {this.drawUsers()}
         </ul> 
-        <button class="button" onClick={this.spinTheBottle}>Spin</button>    
+      </div>
+      </div>
       </div>
     )
   }

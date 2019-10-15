@@ -18,7 +18,7 @@ export default class NavbarPage extends Component {
         </a>
       </li>
       <li className="nav-item">
-        <a href="/beers">Beers</a>
+        <a href="/beers">Brews</a>
       </li>
       <li className="nav-item">
         <a  href="/breweries">Breweries</a>
@@ -27,8 +27,9 @@ export default class NavbarPage extends Component {
         <a href="/spin">Spin</a>
       </li>
     </ul>
+    <div className='account'>
     <ul className="navbar-nav ml-auto nav-flex-icons">
-      <li className="nav-item">
+      {/* <li className="nav-item">
         <a className="waves-effect waves-light" href="https://twitter.com/">
           <i className="fab fa-twitter"></i>
         </a>
@@ -37,7 +38,8 @@ export default class NavbarPage extends Component {
         <a className="waves-effect waves-light" href="https://accounts.google.com/signin/v2/sl/pwd?service=CPanel&p&flowName=GlifWebSignIn&flowEntry=ServiceLogin">
           <i className="fab fa-google-plus-g"></i>
         </a>
-      </li>
+      </li> */}
+      Account
       <li className="nav-item dropdown">
         <div className="dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i className="fas fa-user"></i>
@@ -47,9 +49,10 @@ export default class NavbarPage extends Component {
           <a className="dropdown-item" href="/signup">Sign up</a>
           <a className="dropdown-item" href="/login">Log in</a>
           <a className="dropdown-item" href="/profile">Profile</a>
-        </div>
+          </div>
       </li>
     </ul>
+    </div>
   </div>
 </nav>
 </React.Fragment>

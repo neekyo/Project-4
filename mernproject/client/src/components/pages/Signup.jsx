@@ -1,10 +1,9 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBInput } from 'mdbreact';
 
-// backgroundImage: 'url(http://yesofcorsa.com/wp-content/uploads/2018/08/Brewery-Wallpaper-HD.jpg)'
-
 const FormPage = () => {
   return (
+    <div className="sign">
     <MDBContainer>
       <MDBRow>
         <MDBCol md='6'>
@@ -18,42 +17,24 @@ const FormPage = () => {
           >
             <div className='text-white rgba-stylish-strong py-5 px-5 z-depth-4'>
               <div className='text-center'>
-                <h3 className='orange mb-5 mt-4 font-weight-bold'>
-                  <strong>SIGN</strong>
-                  <a className='green-text font-weight-bold'>
-                    <strong> UP</strong>
-                  </a>
+                <h3 className='green mb-5 mt-4 font-weight-bold'>
+                  <strong>SIGN UP</strong>
                 </h3>
               </div>
               <MDBInput
-                label='Your email'
+                label='Username'
                 group
                 type='text'
                 validate
                 labelClass='white-text'
               />
               <MDBInput
-                label='Your password'
+                label='Password'
                 group
                 type='password'
                 validate
                 labelClass='white-text'
               />
-              {/* <div className='md-form pb-3'>
-                <MDBInput
-                  label={
-                    <>
-                      Accept the&nbsp;
-                      <a href='#!' className='green-text font-weight-bold'>
-                        Terms and Conditions
-                      </a>
-                    </>
-                  }
-                  type='checkbox'
-                  id='checkbox1'
-                  labelClass='white-text'
-                />
-              </div> */}
               <MDBRow className='d-flex align-items-center mb-4'>
                 <div className='text-center mb-3 col-md-12'>
                   <MDBBtn
@@ -79,6 +60,7 @@ const FormPage = () => {
         </MDBCol>
       </MDBRow>
     </MDBContainer>
+    </div>
   );
 };
 
