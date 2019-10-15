@@ -23,6 +23,7 @@ export default class profile extends Component {
       </div>
     )
   }
+  
   // componentDidMount() {
   //   api
   //     .getprofile()

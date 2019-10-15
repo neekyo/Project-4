@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Link, NavLink, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Login from './pages/Login'
@@ -8,7 +8,7 @@ import api from '../api'
 import Beers from './pages/Beers'
 import Breweries from './pages/Breweries'
 import NavbarPage from './pages/NavbarPage'
-import Footer from './pages/Footer'
+// import Footer from './pages/Footer'
 import Spin from './pages/Spin'
 
 export default class App extends Component {
@@ -36,19 +36,6 @@ export default class App extends Component {
       <div className="App">
         <header className="App-header">
         <NavbarPage/>
-          {/* <h1 className="App-title">Beertastic</h1>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/beers">Beers</NavLink>
-          <NavLink to="/breweries">Breweries</NavLink>
-          <NavLink to="/spin">Spin</NavLink>
-          {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
-          {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
-          {api.isLoggedIn() && (
-            <Link to="/" onClick={e => this.handleLogoutClick(e)}>
-              Logout
-            </Link>
-          )}
-          {api.isAdmin && <NavLink to="/profile">profile</NavLink>} */}
         </header>
         <Switch>
           <Route path="/" exact component={Home} />          

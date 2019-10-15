@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBInput } from 'mdbreact';
 import api from '../../api'
 
-export default class FormPage extends Component {
+export default class Signup extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -11,7 +11,8 @@ export default class FormPage extends Component {
       password: '',
       message: null,
     }
-  }
+}
+
 handleClick = (e) => {
   console.log(this.state)
   e.preventDefault()
@@ -23,11 +24,13 @@ handleClick = (e) => {
     })
     .catch(err => this.setState({ message: err.toString() }))
 }
+
 handleInputChange = (event) => {
   this.setState({
     [event.target.name]: event.target.value,
   })
 }
+
 render(){
   return (
     <div className="sign">
@@ -51,20 +54,19 @@ render(){
               <MDBInput
                 label='Username'
                 group
+                name='username'
                 type='text'
                 validate
-                name='username'
                 onChange={this.handleInputChange}
                 labelClass='white-text'
               />
               <MDBInput
                 label='Password'
                 group
-                onChange={this.handleInputChange}
-
                 name='password'
                 type='password'
                 validate
+                onChange={this.handleInputChange}
                 labelClass='white-text'
               />
               <MDBRow className='d-flex align-items-center mb-4'>
@@ -91,77 +93,9 @@ render(){
             </div>
           </MDBCard>
         </MDBCol>
-      </MDBRow>
+      </MDBRow> 
     </MDBContainer>
     </div>
   );
   }
 };
-
-
-// import React, { Component } from 'react'
-// import api from '../../api'
-
-// export default class Signup extends Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = {
-//       username: '',
-//       name: '',
-//       password: '',
-//       message: null,
-//     }
-//     this.handleInputChange = this.handleInputChange.bind(this)
-//   }
-
-// handleInputChange(event) {
-//   this.setState({
-//     [event.target.name]: event.target.value,
-//   })
-// }
-
-// handleClick(e) {
-//   e.preventDefault()
-//   api
-//     .signup(this.state.username, this.state.password)
-//     .then(result => {
-//       console.log('SUCCESS!')
-//       this.props.history.push('/login') // Redirect to the login
-//     .catch(err => this.setState({ message: err.toString() }))
-// }
-
-//   render() {
-//     return (
-//       <div className="Signup">
-//         <h2>Sign up</h2>
-//         <br />
-//         <form>
-//           Username:{' '}
-//           <br />
-//           <input
-//             type="text"
-//             value={this.state.username}
-//             name="username"
-//             onChange={this.handleInputChange}
-//           />{' '}
-//           <br />
-//           <br />
-//           Password:{' '}
-//           <br />
-//           <input
-//             type="password"
-//             value={this.state.password}
-//             name="password"
-//             onChange={this.handleInputChange}
-//           />{' '}
-//           <br />
-//           <br />
-//           <button className="hoverButton" onClick={e => this.handleClick(e)}>Sign up</button>
-//         </form>
-//         {this.state.message && (
-//           <div className="info info-danger">{this.state.message}</div>
-//         )}
-//       </div>
-//     )
-//   }
-// }

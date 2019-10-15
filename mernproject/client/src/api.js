@@ -45,6 +45,7 @@ export default {
   },
 
   login(username, password) {
+    console.log("LOGGING IN ATTEMPT", username, password)
     return service
       .post('/login', {
         username,
