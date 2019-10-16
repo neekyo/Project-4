@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import App from './components/App.jsx'
 import axios from 'axios'
 // import registerServiceWorker from './registerServiceWorker';
-axios.defaults.withCredentials = false
+//axios.defaults.withCredentials = true
 
 ReactDOM.render(
   <Router>
