@@ -1,4 +1,5 @@
 import axios from 'axios'
+import serverURL from './configServer'
 
 const service = axios.create({
   baseURL:
@@ -111,6 +112,28 @@ export default {
       .then(res => res.data)
       .catch(errHandler)
   },
+
+  test(){
+    console.log("what about this?")
+    return service
+    .get('/breweries')
+    .then(res => {
+    })
+    .catch(errHandler)
+  },
+
+  getBeer(){
+    console.log("one step closer")
+   return service.get('/breweries/test')
+    .then(res => {
+      console.log('anything')
+      console.log(res)
+    })
+    .catch(errHandler)
+  }
+
+
+
 }
 
 

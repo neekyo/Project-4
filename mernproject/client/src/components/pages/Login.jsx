@@ -51,7 +51,7 @@ render() {
             <div className='text-white rgba-stylish-strong py-5 px-5 z-depth-4'>
               <div className='text-center'>
                 <h3 className='green mb-5 mt-4 font-weight-bold'>
-                  <strong>LOG IN</strong>
+                  <strong>LOGIN</strong>
                 </h3>
               </div>
               <MDBInput

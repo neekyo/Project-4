@@ -26,12 +26,13 @@ app.use(nocache())
 app.use(
   cors({
     origin: (origin, cb) => {
-      cb(null, origin && true)
+      cb(null, origin && origin.startsWith('http://localhost:'))
     },
     optionsSuccessStatus: 200,
     credentials: true,
   })
 )
+
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -49,12 +50,13 @@ app.use(
     saveUninitialized: true,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
   })
-)
-require('./passport')(app)
+  )
+  require('./passport')(app)
 
 app.use('/api', require('./routes/index'))
 app.use('/api', require('./routes/auth'))
-app.use('/api/breweries', require('./routes/breweries'))
+app.use('/api/beers', require('./routes/beers'))
+app.use('breweries', require('./routes/breweries'))
 
 // For any routes that starts with "/api", catch 404 and forward to error handler
 app.use('/api/*', (req, res, next) => {

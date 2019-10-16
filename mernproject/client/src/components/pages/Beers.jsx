@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import api from '../../api'
 
 export default class Beers extends Component {
   constructor(props) {
@@ -11,15 +12,13 @@ export default class Beers extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://api.punkapi.com/v2/beers?page=1&per_page=80`)
-    .then((response) => {
-      console.log(response.data)
-      this.setState({
-        beers: response.data,
-        filteredBeers: response.data
-      })
-    })
-      .catch(err => console.log(err))
+    console.log("This should appear")
+    api.test()
+    .then(() => {
+      console.log('SUCCESS!')
+    }
+    )
+    .catch(err => {console.error(err)})
   }
 
   searchBeers = (e) => {
