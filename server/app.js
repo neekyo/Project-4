@@ -60,7 +60,7 @@ app.use(express.static(path.join(__dirname, '../client/build')))
 // Enable authentication using session + passport
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || 'irongenerator',
+    secret: 'anyValue' || 'irongenerator',
     resave: true,
     saveUninitialized: true,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
