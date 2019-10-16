@@ -37,11 +37,11 @@ export default class Beers extends Component {
     
   }
   
-
   render() {
     return (
       <div className = "background">
-        <h2>Brews</h2>
+        <h2>Brews (80)</h2>
+
       <form className="brewSearch">
       <input
         onChange={this.searchBeers} 
@@ -51,16 +51,18 @@ export default class Beers extends Component {
         className='search'
       />
       </form>
+
       <div className="Beers">
         {this.state.filteredBeers.map((eachBeer, i) => (
           <div key={i} className = "eachBeer">
-          <img  src={eachBeer.image_url} alt=""/>
+          <img src={eachBeer.image_url} alt=""/>
           <ul className = "beerDeets">
-          <p key={i+'a'}>Name: {eachBeer.name}</p>
+          <h3 key={i+'a'}>{eachBeer.name}</h3>
           <p key={i+'b'}>ABV: {eachBeer.abv}%</p>
           <p key={i+'c'}>Tag: {eachBeer.tagline}</p>
-          </ul>
           <button className='favorite button' onclick="addFavorite()">Add Favorite</button>
+          </ul>
+          
           </div>
         ))}
       </div>

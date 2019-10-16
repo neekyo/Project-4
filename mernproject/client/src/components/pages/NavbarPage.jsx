@@ -7,7 +7,7 @@ export default class NavbarPage extends Component {
 <nav className="mb-1 navbar navbar-expand-lg navbar-dark default-color">
   <a className="nav-item logo" href="/">
   <img className='logo' src="./beer1.png" alt=''/> 
-  <span className="orange">[</span>Beer<span className="orange">tastic</span><span>]</span></a>
+  <span className="orange">[</span>Brew<span className="orange">tastic!</span><span>]</span></a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@ export default class NavbarPage extends Component {
       </li> */}
       <img className='login' src="./login1.jpg" alt=''/> 
       Account
-      <li className="nav-item dropdown">
+      <li className="nav-item dropdown orange">
         <div className="dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i className="fas fa-user"></i>
         </div>

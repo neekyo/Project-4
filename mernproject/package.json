@@ -12,6 +12,7 @@
     "node": "8.9.4"
   },
   "dependencies": {
+    "google-map-react": "^1.1.5",
     "mdbreact": "^4.21.1"
   }
 }

@@ -1,9 +1,11 @@
-// --------------------
-// Definition of variables
 $primary: #32c3ff;
 
-// --------------------
-// Style reusable for all components
+@import url('//fonts.googleapis.com/css?family=Pacifico&text=Pure');
+@import url('//fonts.googleapis.com/css?family=Roboto:700&text=css');
+@import url('//fonts.googleapis.com/css?family=Kaushan+Script&text=!');
+@import url('//fonts.googleapis.com/css?family=Pacifico&text=Pure');
+@import url('//fonts.googleapis.com/css?family=Roboto:700&text=css');
+@import url('//fonts.googleapis.com/css?family=Kaushan+Script&text=!');
 
 body {
   margin: 0;
@@ -24,8 +26,6 @@ body {
   background-color: #e73f3f;
 }
 
-// --------------------
-// Style for App component
 .App {
   text-align: center;
 
@@ -73,8 +73,6 @@ body {
   }
 }
 
-// --------------------
-// Style for Home component
 .Home {
   img {
     height: 100vh; 
@@ -82,8 +80,6 @@ body {
   }
 }
 
-// --------------------
-// Style for profile component
 .profile {
   .result {
     font-size: 1.2em;
@@ -114,10 +110,11 @@ body {
 
 .beerDeets {
   width: 55%;
-  box-shadow: 10px 5px 5px gray;
-  border-radius: 10px;
+  box-shadow: 0px 1px 2px rgba(207, 207, 207, 0.603);
+  border: 1px solid #f7f7f7;
+  border-radius: 5px;
   height: auto;
-  padding-top: 1rem;
+  padding: 10px 23px;
 }
 
 .brewSearch {
@@ -157,6 +154,10 @@ h2 {
   margin-top: 15px;
 }
 
+h3 {
+  font-size: 1rem;
+  font-weight: bold;
+}
 input:focus {
   outline: 5px auto orange;
 }
@@ -242,7 +243,7 @@ a.waves-effect.waves-light {
   top: 0;
   left: 0;
   width: 17px;
-  height: 17px;
+  height: 17px; 
   z-index: 0;
   border: 1.5px solid #fff;
   border-radius: 1px;
@@ -285,9 +286,9 @@ a.waves-effect.waves-light {
 }
 
 .favorite {
-  border-radius: 5px;
-  margin-left: 150px;
-  margin-bottom: 15px;
+  border-radius: 5px; 
+  margin: auto; 
+  margin-bottom: 5px;
   background-color: orange;
   color: white;
 }
@@ -304,16 +305,6 @@ a.waves-effect.waves-light {
   height: 1.5rem;
   margin: 2.5px 5px 0 0;
 }
-
-// google font subsetting, see Heydon Pickering's: http://www.sitepoint.com/joy-of-subsets-web-fonts/
-@import url('//fonts.googleapis.com/css?family=Pacifico&text=Pure');
-@import url('//fonts.googleapis.com/css?family=Roboto:700&text=css');
-@import url('//fonts.googleapis.com/css?family=Kaushan+Script&text=!');
-
-// google font subsetting, see Heydon Pickering's: http://www.sitepoint.com/joy-of-subsets-web-fonts/
-@import url('//fonts.googleapis.com/css?family=Pacifico&text=Pure');
-@import url('//fonts.googleapis.com/css?family=Roboto:700&text=css');
-@import url('//fonts.googleapis.com/css?family=Kaushan+Script&text=!');
 
 .stage {
   height: 300px;
@@ -338,7 +329,7 @@ a.waves-effect.waves-light {
 
 .layer:after {
   font: 150px/0.65 'Pacifico', 'Kaushan Script', Futura, 'Roboto', 'Trebuchet MS', Helvetica, sans-serif;
-  content: 'Beer\A    tastic!';
+  content: 'Brew\A    tastic!';
   white-space: pre;
   text-align: center;
   height: 100%;
