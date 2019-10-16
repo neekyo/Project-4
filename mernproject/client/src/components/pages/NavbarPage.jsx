@@ -7,7 +7,7 @@ export default class NavbarPage extends Component {
 <nav className="mb-1 navbar navbar-expand-lg navbar-dark default-color">
   <a className="nav-item logo" href="/">
   <img className='logo' src="./beer1.png" alt=''/> 
-  <span className="orange">[</span>Beertastic<span className="orange">]</span></a>
+  <span className="orange">[</span>Beer<span className="orange">tastic</span><span>]</span></a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
