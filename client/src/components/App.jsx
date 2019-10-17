@@ -24,12 +24,33 @@ export default class App extends Component {
       ibu: "",
       ingredients: "",
       food_pairing: "",
+      user: {} 
     }
+  }
+  componentDidMount(){
+    this.getUser()
   }
 
   handleLogoutClick(e) {
     api.logout()
+    this.setState({
+      user: {}
+    })
   }
+
+  setUser = (user) => {
+    this.setState({
+      user
+    })
+  }
+
+  getUser = () => {
+    api.getUser().then(theUser => {
+      let user = theUser ? theUser : {}
+      this.setState({user})
+    }).catch(err=>console.error(err))
+  }
+
 
   render() {
     return (
@@ -38,13 +59,13 @@ export default class App extends Component {
         <NavbarPage/>
         </header>
         <Switch>
-          <Route path="/" exact component={Home} />          
-          <Route path="/breweries" component={Breweries} />
-          <Route path="/spin" component={Spin} />
-          <Route path="/beers" component={Beers} />
-          <Route path="/signup" component={Signup} /> 
-          <Route path="/login" component={Login} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/" exact render={(props) => <Home {...props} setUser={this.setUser} user={this.state.user} />} />          
+          <Route path="/breweries" render={(props) => <Breweries {...props} setUser={this.setUser} user={this.state.user}/>} />
+          <Route path="/spin" render={(props) => <Spin {...props} setUser={this.setUser} user={this.state.user}/>} />
+          <Route path="/beers" render={(props) => <Beers {...props} setUser={this.setUser} user={this.state.user}/>} />
+          <Route path="/signup" render={(props) => <Signup {...props} setUser={this.setUser} user={this.state.user}/>} />
+          <Route path="/login" render={(props) => <Login {...props} setUser={this.setUser} user={this.state.user}/>} />
+          <Route path="/profile" render={(props) => <Profile {...props} setUser={this.setUser} user={this.state.user}/>} />
           <Route render={() => <h2>404</h2>} />
         </Switch>
       </div>

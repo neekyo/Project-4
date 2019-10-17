@@ -4,7 +4,6 @@ const Brewery = require('../models/Brewery')
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-  console.log('yikes')
   Brewery.find()
     .then(breweries => {
       res.json(breweries)
@@ -13,7 +12,6 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-  console.log("------")
   let { address, city, province, name } = req.body
   Brewery.create({ address, city, province, name })
     .then(brewery => {
@@ -26,7 +24,6 @@ router.post('/', (req, res, next) => {
 })
 
 router.get('/test', (req, res, next)=>{
-  console.log("----")
   res.json({message: "----"})
 })
 

@@ -10,8 +10,8 @@ export default class Spin extends Component {
         width: '50px',
         transition: 'all 5s',
         position: 'fixed',
-        top: '35vh',
-        left: '47vw'
+        bottom: window.innerHeight/2 - 100, 
+        left: window.innerWidth/2,
       },
      winner: {},
      users : [{ name: 'A'}, {name: 'B'}, {name: 'C'}, {name: 'D'}, {name: 'E'}]
@@ -60,12 +60,12 @@ setWinner = (winner) => {
 
 drawUsers = () => {
   let users = [...this.state.users]
-  users = arrangeElementsInCircle(users, window.innerHeight/2, window.innerWidth/2, 300)
+  users = arrangeElementsInCircle(users, window.innerHeight/2 - 100, window.innerWidth/2, 200)
   console.log(users)
 
   return users.map(eachUser => {
     let style = {
-      position:'fixed', 
+      position:'fixed',
       color: 'orange',  
       bottom: eachUser.x,
       left: eachUser.y,

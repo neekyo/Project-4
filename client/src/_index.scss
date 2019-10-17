@@ -122,6 +122,15 @@ body {
   justify-content: center;
 }
 
+.favBrew {
+  width: auto;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 5px;
+  border: 1px solid orange;
+  font-weight: bold;
+}
+
 .search {
   width: 40%;
   border-radius: 5px;   
@@ -158,6 +167,7 @@ h3 {
   font-size: 1.5rem;
   font-weight: bold;
 }
+
 input:focus {
   outline: 5px auto orange;
 }
@@ -268,7 +278,7 @@ a.waves-effect.waves-light {
   transform-origin: 100% 100%; }
 
 .spin {
-  margin: 20px;
+  margin: 1rem;
   border-radius: 5px;
   color: white;
   background-color: orange;
