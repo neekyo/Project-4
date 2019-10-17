@@ -20,13 +20,11 @@ const errHandler = err => {
 
 export default {
   service: service,
-
   // This method is synchronous and returns true or false
   // To know if the user is connected, we just check if we have a value for localStorage.getItem('user')
   isLoggedIn() {
     return localStorage.getItem('user') != null
   },
-
   // This method returns the user from the localStorage
   // Be careful, the value is the one when the user logged in for the last time
   getLocalStorageUser() {

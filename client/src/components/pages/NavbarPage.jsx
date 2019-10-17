@@ -31,16 +31,6 @@ export default class NavbarPage extends Component {
     </ul>
     <div className='account'>
     <ul className="navbar-nav ml-auto nav-flex-icons">
-      {/* <li className="nav-item">
-        <a className="waves-effect waves-light" href="https://twitter.com/">
-          <i className="fab fa-twitter"></i>
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="waves-effect waves-light" href="https://accounts.google.com/signin/v2/sl/pwd?service=CPanel&p&flowName=GlifWebSignIn&flowEntry=ServiceLogin">
-          <i className="fab fa-google-plus-g"></i>
-        </a>
-      </li> */}
       <img className='login' src="./login1.jpg" alt=''/> 
       Account
       <li className="nav-item dropdown orange">
