@@ -21,7 +21,7 @@ handleClick = (e) => {
     .then(result => {
       console.log('SUCCESS!', result)
       this.props.setUser(result)
-      this.props.history.push('/profile') // Redirect to the profile
+      this.props.history.push('/profile')
     }
     )
     .catch(err => this.setState({ message: err.toString() }))
