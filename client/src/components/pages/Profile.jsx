@@ -4,7 +4,6 @@ import api from '../../api'
 export default class profile extends Component {
   constructor(props) {
     super(props)
-
   }
 
   showFavs = () => {
@@ -15,9 +14,7 @@ export default class profile extends Component {
     }
   }
   render() {
-
     console.log(this)
-
     return (
       <div className="profile">
         <h2>Profile</h2>
