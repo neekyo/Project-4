@@ -20,6 +20,7 @@ handleClick = (e) => {
     .login(this.state.username, this.state.password)
     .then(result => {
       console.log('SUCCESS!', result)
+      this.props.setUser(result)
       this.props.history.push('/profile') // Redirect to the profile
     }
     )

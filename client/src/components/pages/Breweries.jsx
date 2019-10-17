@@ -11,46 +11,73 @@ export default class Breweries extends Component {
     }
   }
 
+componentDidMount() {
+  api.getBreweries()
+  .then((breweries) => {
+    console.log('SUCCESS!', breweries)
+    this.setState({
+      breweries,
+      filteredBreweries:breweries
+    })
+  }
+  )
+  .catch(err => {console.error(err)})
+}
+
+searchBreweries = (e) => {
+    let search = e.target.value
+    let filteredBreweries = this.state.breweries.filter(entry => {
+      return entry.name.toLowerCase().includes(search.toLowerCase())
+    });
+    console.log(filteredBreweries)
+    this.setState({
+      filteredBreweries: filteredBreweries
+    }, () => {
+      console.log(this.state.filteredBreweries)
+
+    });    
+ };
+
 render() {
   return (
     <React.Fragment>
     <div className="breweries">
       <h2>Breweries (25,000+!)</h2>
-      {this.state.breweries.map(c => (
-        <li key={c._id}>{c.address}</li>
-      ))}
+
+    <form className="brewSearch">
+    <input
+      onChange={this.searchBreweries} 
+      placeholder=" Search all breweries"
+      id="search"
+      type="text"
+      className='search'
+    />
+    </form>
+
+      {/* {this.state.breweries.map(c => (
+        <li key={c._id}>{c.name}</li>
+      ))} */}
     </div>
 
-    <div className="Breweries">
-      {this.state.filteredBreweries.map((eachBrewery, i) => (
-        <div className="Beers">
-        {this.state.filteredBeers.map((eachBeer, i) => (
-          <div key={i} className = "eachBeer">
-          <img  src={eachBeer.image_url} alt=""/>
-          <ul className = "beerDeets">
-          <p key={i+'a'}>Name: {eachBeer.name}</p>
-          <p key={i+'b'}>ABV: {eachBeer.abv}%</p>
-          <p key={i+'c'}>Tag: {eachBeer.tagline}</p>
+    {/* <div className="Breweries">
+          <div className="filteredBreweries"> */}
+        {this.state.filteredBreweries.map((eachBrewery, i) => (
+          <div key={i} className = "eachBrewery">
+          <img  src={eachBrewery.image_url} alt=""/>
+          <ul className = "brewDeets">
+          <p key={i+'a'}>Name: {eachBrewery.name}</p>
+          <p key={i+'b'}>City: {eachBrewery.city}%</p>
+          <p key={i+'d'}>State: {eachBrewery.province}</p>
+          <p key={i+'e'}>Address: {eachBrewery.address}</p>
           </ul>
           <button className='favorite button' onclick="addFavorite()">Add Favorite</button>
           </div>
-        ))}
-      </div>
+
       ))}
-    </div>
+      {/* </div>
+
+    </div> */}
     </React.Fragment>
   )
 }
-
-  componentDidMount() {
-    api
-      .getBreweries()
-      .then(breweries => {
-        console.log(breweries)
-        this.setState({
-          breweries: breweries,
-        })
-      })
-      .catch(err => console.log(err))
-  }
 }

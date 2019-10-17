@@ -10,7 +10,7 @@ router.get('/profile', isLoggedIn, (req, res, next) => {
   })
 })
 
-router.get('/getAllTheUsers', isLoggedIn, (req, res, next) => {
+router.get('/getAllTheUsers', (req, res, next) => {
   User.find()
     .then(user => {
       res.json(user)
@@ -34,4 +34,18 @@ router.get('/getTheBeers', (req, res, next) => {
     .catch(err => console.log(err))
 })
 
+
+router.post('/beerToProfile', isLoggedIn, (req, res, next) => {
+  console.log('added favorite', req.user, req.body)
+  User.findByIdAndUpdate(req.user._id, { $push: { beers: req.body  } },  {new: true}).then(user=>{
+
+    res.json({user})
+
+  }).catch(err=>console.log(err))
+})
+
+
+  router.get('/getTheUser', (req, res, next) => {
+    res.json(req.user)
+  })
 module.exports = router
