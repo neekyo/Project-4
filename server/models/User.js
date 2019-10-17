@@ -9,6 +9,7 @@ const userSchema = new Schema({
   avatar: String,
   googlePic: String,
   profileImage: {type: String, default: ""},
+  beers: Array
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 }); 

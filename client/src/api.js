@@ -6,7 +6,7 @@ const service = axios.create({
     process.env.NODE_ENV === 'production'
       ? '/api'
       : 'http://localhost:5000/api',
-  withCredentials: true,
+  withCredentials: false,
 })
 
 const errHandler = err => {
@@ -77,19 +77,18 @@ export default {
   },
 
   getBreweries(){
-    console.log('hi')
     return service
       .get('/breweries')
       .then(res => res.data)
       .catch(errHandler)
   },
 
-  addCountry(body) {
-    return service
-      .post('/countries', body)
-      .then(res => res.data)
-      .catch(errHandler)
-  },
+addCountry(body) {
+  return service
+    .post('/countries', body)
+    .then(res => res.data)
+    .catch(errHandler)
+},
 
   getprofile() {
     return service
@@ -119,7 +118,6 @@ export default {
   },
 
   test(){
-    console.log("what about this?")
     return service
     .get('/breweries')
     .then(res => {
@@ -127,6 +125,12 @@ export default {
     .catch(errHandler)
   },
 
+  getUser() {
+    return service
+    .get('/getTheUser')
+    .then(res=>res.data)
+    .catch(errHandler)  
+  },
   getBeer(){
     console.log("one step closer")
    return service.get('/breweries/test')
@@ -135,10 +139,13 @@ export default {
       console.log(res)
     })
     .catch(errHandler)
+  },
+
+addFavoriteBeer(beer) {
+      return service
+      .post('/beerToProfile', beer)
+      .then(res => res.data)
+      .catch(errHandler)
   }
-
-
-
 }
-
 

@@ -20,6 +20,7 @@ handleClick = (e) => {
     .signup({username:this.state.username, password: this.state.password})
     .then(result => {
       console.log('SUCCESS!', result)
+      this.props.setUser(result)
       this.props.history.push('/login') // Redirect to the login
     })
     .catch(err => this.setState({ message: err.toString() }))
