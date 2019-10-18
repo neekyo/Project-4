@@ -1,7 +1,7 @@
-let serverUrl = ''
+let serverUrl = '';
 if (process.env.NODE_ENV === 'production') {
-  serverUrl = '/api' //This is the live version
+	serverUrl = '/api'; //This is the live version
 } else {
-  serverUrl = 'http://localhost:5000/api'
+	serverUrl = 'http://localhost:5000/api';
 }
-module.exports = serverUrl
+module.exports = serverUrl;
