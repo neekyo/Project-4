@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
 const Marker = ({ text }) => <div>{text}</div>;
-
 // let places = [];
 // for (let i = 0; i < 27000; i++) {
 // 	places.push({
@@ -19,7 +18,6 @@ class SimpleMap extends Component {
 		},
 		zoom: 8
 	};
-
 	// displayMarkers = () => {
 	// 	return this.props.filteredBreweries.map((marker, i) => {
 	// 		return <Marker text={marker.name} lat={places[i].lat} lng={places[i].lng} />;
