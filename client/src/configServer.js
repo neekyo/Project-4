@@ -1,6 +1,6 @@
 let serverUrl = '';
 if (process.env.NODE_ENV === 'production') {
-	serverUrl = '/api'; //This is the live version
+	serverUrl = '/api';
 } else {
 	serverUrl = 'http://localhost:5000/api';
 }
