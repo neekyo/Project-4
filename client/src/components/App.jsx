@@ -8,7 +8,6 @@ import api from '../api';
 import Beers from './pages/Beers';
 import Breweries from './pages/Breweries';
 import NavbarPage from './pages/NavbarPage';
-// import Footer from './pages/Footer'
 import Spin from './pages/Spin';
 
 export default class App extends Component {

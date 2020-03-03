@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import api from '../../api';
 
-export default class profile extends Component {
-	constructor(props) {
-		super(props);
-	}
-
+export default class Profile extends Component {
 	showFavs = () => {
 		if (this.props.user.beers) {
 			return this.props.user.beers.map((eachBeer) => {
@@ -19,6 +14,7 @@ export default class profile extends Component {
 			});
 		}
 	};
+
 	render() {
 		console.log(this);
 
