@@ -14,7 +14,7 @@ export default class Beers extends Component {
 		api
 			.getBeers()
 			.then((beers) => {
-				console.log('SUCCESS!', beers);
+				console.log('Success!', beers);
 				this.setState({
 					beers,
 					filteredBeers: beers

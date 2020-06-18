@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../api';
 import SimpleMap from '../SimpleMap';
+import Spinner from '../Spinner';
 
 export default class Breweries extends Component {
 	constructor(props) {
@@ -15,7 +16,7 @@ export default class Breweries extends Component {
 		api
 			.getBreweries()
 			.then((breweries) => {
-				console.log('SUCCESS!', breweries);
+				console.log('Success!', breweries);
 				this.setState({
 					breweries,
 					filteredBreweries: breweries
@@ -43,7 +44,9 @@ export default class Breweries extends Component {
 	};
 
 	render() {
-		if (this.state.breweries && this.state.filteredBreweries) {
+		if (!this.state.breweries && !this.state.filteredBreweries) {
+			return <Spinner />;
+		} else
 			return (
 				<React.Fragment>
 					<div className="background">
@@ -78,7 +81,5 @@ export default class Breweries extends Component {
 					</div>
 				</React.Fragment>
 			);
-		}
-		return <div>Loading!</div>;
 	}
 }
