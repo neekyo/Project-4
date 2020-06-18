@@ -19,7 +19,7 @@ export default class Login extends Component {
 		api
 			.login(this.state.username, this.state.password)
 			.then((result) => {
-				console.log('SUCCESS!', result);
+				console.log('Success!', result);
 				this.props.setUser(result);
 				this.props.history.push('/profile'); // Redirect to the profile
 			})
@@ -31,7 +31,7 @@ export default class Login extends Component {
 			{
 				[event.target.name]: event.target.value
 			},
-			() => console.log('STATE UPDATED', this.state)
+			() => console.log('State Updated', this.state)
 		);
 	};
 

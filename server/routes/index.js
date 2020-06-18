@@ -19,23 +19,16 @@ router.get('/getAllTheUsers', (req, res, next) => {
 });
 
 router.get('/getTheBeers', (req, res, next) => {
-	console.log('here????????');
 	axios
 		.get(`https://api.punkapi.com/v2/beers?page=1&per_page=80`)
 		.then((response) => {
-			//console.log(response)
 			res.json(response.data);
-
-			// this.setState({
-			//   beers: response.data,
-			//   filteredBeers: response.data
-			// })
 		})
 		.catch((err) => console.log(err));
 });
 
 router.post('/beerToProfile', isLoggedIn, (req, res, next) => {
-	console.log('added favorite', req.user, req.body);
+	console.log('Added to favorites', req.user, req.body);
 	User.findByIdAndUpdate(req.user._id, { $push: { beers: req.body } }, { new: true })
 		.then((user) => {
 			res.json({ user });

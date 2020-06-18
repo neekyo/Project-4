@@ -42,7 +42,7 @@ export default {
 	},
 
 	login(username, password) {
-		console.log('LOGGING IN ATTEMPT', username, password);
+		console.log('Log in attempt', username, password);
 		return service
 			.post('/login', {
 				username,
@@ -62,7 +62,7 @@ export default {
 	},
 
 	getBeers() {
-		console.log('called');
+		console.log('Called!');
 		return service
 			.get('/getTheBeers')
 			.then((res) => {
@@ -109,11 +109,9 @@ export default {
 		return service.get('/getTheUser').then((res) => res.data).catch(errHandler);
 	},
 	getBeer() {
-		console.log('one step closer');
 		return service
 			.get('/breweries/test')
 			.then((res) => {
-				console.log('anything');
 				console.log(res);
 			})
 			.catch(errHandler);

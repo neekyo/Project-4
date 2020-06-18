@@ -10,7 +10,6 @@ export default class Home extends Component {
 						alt=""
 					/>
 				</div>
-
 				<div className="stage">
 					<div className="layer" />
 				</div>

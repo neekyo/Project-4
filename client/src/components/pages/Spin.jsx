@@ -72,28 +72,30 @@ export default class Spin extends Component {
 				bottom: eachUser.x,
 				left: eachUser.y - 30
 			};
-			return <li style={style}> {eachUser.username}</li>;
+			return <li style={style}>{eachUser.username}</li>;
 		});
 	};
 
 	render() {
 		return (
-			<div className="spinBackground">
-				<div>
-					<button className="button spin" onClick={this.spinTheBottle}>
-						Spin the bottle!
-					</button>
-					<div className="winner">
-						<h4>
-							<b>The winner is... {this.state.winner.username}</b>
-						</h4>
-						<div className="board">
-							<img style={this.state.style} src={this.state.beer.image_url} alt="" />
-							<ul className="players">{this.drawUsers()}</ul>
+			<React.Fragment>
+				<div className="spinBackground">
+					<div>
+						<button className="button spin" onClick={this.spinTheBottle}>
+							Spin the bottle!
+						</button>
+						<div className="winner">
+							<h4>
+								<b>The winner is... {this.state.winner.username}</b>
+							</h4>
+							<div className="board">
+								<img style={this.state.style} src={this.state.beer.image_url} alt="" />
+								<ul className="players">{this.drawUsers()}</ul>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</React.Fragment>
 		);
 	}
 }

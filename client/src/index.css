@@ -14,6 +14,10 @@ body {
 	font-family: 'Lato', sans-serif;
 }
 
+body {
+	-webkit-overflow-scrolling: touch;
+}
+
 .info {
 	margin: 20px;
 	padding: 10px 20px;
@@ -75,7 +79,7 @@ h2 {
 }
 
 .Home img {
-	height: 100vh;
+	height: 92vh;
 	width: 100vw;
 }
 
@@ -99,15 +103,15 @@ h2 {
 
 .eachBeer img {
 	height: 11.5rem;
-	width: 63px;
+	width: auto;
 	margin: 15px;
 }
 
 .Beers {
 	display: flex;
 	flex-wrap: wrap;
-	text-align: left;
-	margin: 20px 0 20px 60px;
+	justify-content: space-evenly;
+
 	height: 50%;
 }
 
@@ -303,7 +307,7 @@ a.waves-effect.waves-light {
 
 .spinBackground {
 	background-image: url('https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
-	height: 100vh;
+	height: 92vh;
 	width: 100vw;
 	object-fit: cover;
 	background-size: cover;
@@ -325,7 +329,7 @@ a.waves-effect.waves-light {
 }
 
 .favorite {
-	border-radius: 10px;
+	border-radius: 6px;
 	margin: auto;
 	margin-bottom: 5px;
 	font-size: .8rem;
