@@ -21,7 +21,7 @@ export default class Signup extends Component {
 			.then((result) => {
 				console.log('Success!', result);
 				this.props.setUser(result);
-				this.props.history.push('/login'); // Redirect to the login
+				this.props.history.push('/profile'); // Redirect profile page
 			})
 			.catch((err) => this.setState({ message: err.toString() }));
 	};

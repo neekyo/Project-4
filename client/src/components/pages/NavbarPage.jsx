@@ -42,10 +42,19 @@ export default class NavbarPage extends Component {
 						</ul>
 						<i className="fas fa-user user" aria-hidden="true" />
 						<NavDropdown title="Account" id="basic-nav-dropdown">
-							<NavDropdown.Item href="/signup">Sign up</NavDropdown.Item>
-							<NavDropdown.Item href="/login">Log in</NavDropdown.Item>
+							<NavDropdown.Item href="/signup">
+								Sign up<i className="fas fa-user-plus account" />
+							</NavDropdown.Item>
+							<NavDropdown.Item href="/login">
+								Log in<i className="fas fa-sign-in-alt account" />
+							</NavDropdown.Item>
+							<NavDropdown.Item href="/logout">
+								Log out<i className="fas fa-sign-out-alt account" />
+							</NavDropdown.Item>
 							<NavDropdown.Divider />
-							<NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+							<NavDropdown.Item href="/profile">
+								Profile<i className="fas fa-user-circle account" />
+							</NavDropdown.Item>
 						</NavDropdown>
 					</div>
 				</nav>

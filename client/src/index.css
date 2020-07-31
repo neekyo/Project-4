@@ -61,6 +61,10 @@ body {
 	}
 }
 
+.account {
+	padding-left: .5rem;
+}
+
 .background {
 	background-color: #f3f3f3;
 }
@@ -207,6 +211,10 @@ a.nav-item.logo {
 
 .log {
 	color: #fea000;
+}
+
+.logout {
+	font-size: 5rem;
 }
 
 .white {

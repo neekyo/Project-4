@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Logout from './pages/Logout';
 import api from '../api';
 import Beers from './pages/Beers';
 import Breweries from './pages/Breweries';
@@ -88,6 +89,10 @@ export default class App extends Component {
 					<Route
 						path="/profile"
 						render={(props) => <Profile {...props} setUser={this.setUser} user={this.state.user} />}
+					/>
+					<Route
+						path="/logout"
+						render={(props) => <Logout {...props} setUser={this.setUser} user={this.state.user} />}
 					/>
 					<Route render={() => <h2>404</h2>} />
 				</Switch>
