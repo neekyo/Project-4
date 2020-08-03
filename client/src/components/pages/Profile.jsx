@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
+import api from '../../api';
 
 export default class Profile extends Component {
+	removeFavorite = (beer) => {
+		console.log(beer, this);
+		api
+			.removeFavoriteBeer(beer)
+			.then((res) => {
+				console.log(res);
+			})
+			.catch((err) => console.error(err));
+	};
+
 	showFavs = () => {
 		if (this.props.user.beers) {
 			return this.props.user.beers.map((eachBeer) => {
@@ -9,6 +20,9 @@ export default class Profile extends Component {
 						<li className="orange">{eachBeer.name}</li>
 						<li>{eachBeer.tagline}</li>
 						<li>{eachBeer.abv}% ABV</li>
+						<button className="favorite button" onClick={(e) => this.removeFavorite(eachBeer)}>
+							Remove
+						</button>
 					</ul>
 				);
 			});

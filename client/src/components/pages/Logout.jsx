@@ -36,7 +36,7 @@ export default class Logout extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="cheers">
 				<div>
 					<h2>You have been logged out!</h2>
 					<br />

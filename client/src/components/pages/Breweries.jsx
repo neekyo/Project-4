@@ -8,7 +8,8 @@ export default class Breweries extends Component {
 		super(props);
 		this.state = {
 			breweries: [],
-			filteredBreweries: []
+			filteredBreweries: [],
+			loading: true
 		};
 	}
 
@@ -19,11 +20,13 @@ export default class Breweries extends Component {
 				console.log('Success!', breweries);
 				this.setState({
 					breweries,
-					filteredBreweries: breweries
+					filteredBreweries: breweries,
+					loading: false
 				});
 			})
 			.catch((err) => {
 				console.error(err);
+				this.setState({ loading: false });
 			});
 	}
 
@@ -44,42 +47,40 @@ export default class Breweries extends Component {
 	};
 
 	render() {
-		if (!this.state.breweries && !this.state.filteredBreweries) {
-			return <Spinner />;
-		} else
-			return (
-				<React.Fragment>
-					<div className="background">
-						<div className="breweries">
-							<h2>Breweries (25,000+!)</h2>
-							<form className="brewSearch">
-								<input
-									onChange={this.searchBreweries}
-									placeholder=" Search all breweries"
-									id="search"
-									type="text"
-									className="search"
-								/>
-							</form>
-						</div>
-						<div className="map">
-							<SimpleMap filteredBreweries={this.state.filteredBreweries} />
-						</div>
-						<div className="brewCard">
-							{this.state.filteredBreweries.map((eachBrewery, i) => (
-								<div key={i} className="eachBrewery">
-									<img src={eachBrewery.image_url} alt="" />
-									<ul className="brewDeets">
-										<p key={i + 'a'}>Name: {eachBrewery.name}</p>
-										<p key={i + 'b'}>City: {eachBrewery.city}</p>
-										<p key={i + 'd'}>State: {eachBrewery.province}</p>
-										<p key={i + 'e'}>Address: {eachBrewery.address}</p>
-									</ul>
-								</div>
-							))}
-						</div>
+		return (
+			<React.Fragment>
+				<div className="background">
+					<div className="breweries">
+						<h2>Breweries (25,000+!)</h2>
+						<form className="brewSearch">
+							<input
+								onChange={this.searchBreweries}
+								placeholder=" Search all breweries"
+								id="search"
+								type="text"
+								className="search"
+							/>
+						</form>
 					</div>
-				</React.Fragment>
-			);
+					<div className="map">
+						<SimpleMap filteredBreweries={this.state.filteredBreweries} />
+					</div>
+					<div className="brewCard">
+						{this.state.loading && <Spinner />}
+						{this.state.filteredBreweries.map((eachBrewery, i) => (
+							<div key={i} className="eachBrewery">
+								<img src={eachBrewery.image_url} alt="" />
+								<ul className="brewDeets">
+									<p key={i + 'a'}>Name: {eachBrewery.name}</p>
+									<p key={i + 'b'}>City: {eachBrewery.city}</p>
+									<p key={i + 'd'}>State: {eachBrewery.province}</p>
+									<p key={i + 'e'}>Address: {eachBrewery.address}</p>
+								</ul>
+							</div>
+						))}
+					</div>
+				</div>
+			</React.Fragment>
+		);
 	}
 }

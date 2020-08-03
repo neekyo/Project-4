@@ -9,6 +9,10 @@ body {
 	-webkit-overflow-scrolling: touch;
 }
 
+h2 {
+	font-family: 'Arvo', serif;
+}
+
 .info {
 	margin: 20px;
 	padding: 10px 20px;
@@ -69,8 +73,28 @@ body {
 	background-color: #f3f3f3;
 }
 
-h2 {
-	font-family: 'Arvo', serif;
+.center {
+	padding-top: 5rem;
+	height: 54.7vh;
+	width: 100%;
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 20px;
+	background-color: #f3f3f3;
+}
+
+.cheers {
+	background-image: url('https://images.pexels.com/photos/2574851/pexels-photo-2574851.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+	height: 92.5vh;
+	width: 100vw;
+	background-size: cover;
+}
+
+div.loader {
+	font-size: 5rem;
+	color: orange;
 }
 
 .Home img {

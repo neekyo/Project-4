@@ -76,10 +76,6 @@ export default {
 		return service.get('/breweries').then((res) => res.data).catch(errHandler);
 	},
 
-	addCountry(body) {
-		return service.post('/countries', body).then((res) => res.data).catch(errHandler);
-	},
-
 	getprofile() {
 		return service.get('/profile').then((res) => res.data).catch(errHandler);
 	},
@@ -108,6 +104,7 @@ export default {
 	getUser() {
 		return service.get('/getTheUser').then((res) => res.data).catch(errHandler);
 	},
+
 	getBeer() {
 		return service
 			.get('/breweries/test')
@@ -119,5 +116,9 @@ export default {
 
 	addFavoriteBeer(beer) {
 		return service.post('/beerToProfile', beer).then((res) => res.data).catch(errHandler);
+	},
+
+	removeFavoriteBeer(beer) {
+		return service.post('/beerFromProfile', beer).then((res) => res.data).catch(errHandler);
 	}
 };
