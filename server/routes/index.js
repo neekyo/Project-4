@@ -42,12 +42,11 @@ router.post('/beerToProfile', isLoggedIn, (req, res, next) => {
 
 router.post('/beerFromProfile', isLoggedIn, (req, res, next) => {
 	console.log('Removed from favorites', req.user, req.body);
-	User.findByIdAndUpdate(req.user._id, { $push: { beers: req.body } }, { new: true })
+	User.findByIdAndRemove(req.user._id, { $pop: { beers: req.body } })
 		.then((user) => {
 			res.json({ user });
 		})
 		.catch((err) => console.log(err));
 });
-
 
 module.exports = router;

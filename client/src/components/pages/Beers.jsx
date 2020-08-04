@@ -50,7 +50,6 @@ export default class Beers extends Component {
 		return (
 			<div className="background">
 				<h2>Brews (80)</h2>
-
 				<form className="brewSearch">
 					<input
 						onChange={this.searchBeers}
@@ -60,7 +59,6 @@ export default class Beers extends Component {
 						className="search"
 					/>
 				</form>
-
 				<div className="Beers">
 					{this.state.filteredBeers.map((eachBeer, i) => (
 						<div key={i} className="eachBeer">
