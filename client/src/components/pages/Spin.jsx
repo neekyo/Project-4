@@ -40,7 +40,7 @@ export default class Spin extends Component {
 		let index = Math.floor(Math.random() * users.length);
 		let winner = users[index];
 
-		console.log('our winner is ', winner);
+		console.log('Our winner is ', winner);
 
 		let min = index * (360 / users.length);
 		let max = (index + 1) * (360 / users.length);
@@ -80,18 +80,16 @@ export default class Spin extends Component {
 		return (
 			<React.Fragment>
 				<div className="spinBackground">
-					<div>
-						<button className="button spin" onClick={this.spinTheBottle}>
-							Spin the bottle!
-						</button>
-						<div className="winner">
-							<h4>
-								<b>The winner is... {this.state.winner.username}</b>
-							</h4>
-							<div className="board">
-								<img style={this.state.style} src={this.state.beer.image_url} alt="" />
-								<ul className="players">{this.drawUsers()}</ul>
-							</div>
+					<button className="button spin" onClick={this.spinTheBottle}>
+						Spin the bottle!
+					</button>
+					<div className="winner">
+						<h4>
+							<b>The winner is... {this.state.winner.username}</b>
+						</h4>
+						<div className="board">
+							<img style={this.state.style} src={this.state.beer.image_url} alt="" />
+							<ul className="players">{this.drawUsers()}</ul>
 						</div>
 					</div>
 				</div>

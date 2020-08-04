@@ -55,24 +55,27 @@ export default class Login extends Component {
 											<strong>LOGIN</strong>
 										</h3>
 									</div>
-									<MDBInput
-										label="Username"
-										group
-										name="username"
-										type="text"
-										validate
-										onChange={this.handleInputChange}
-										labelClass="white-text"
-									/>
-									<MDBInput
-										label="Password"
-										group
-										name="password"
-										type="password"
-										validate
-										onChange={this.handleInputChange}
-										labelClass="white-text"
-									/>
+									<form>
+										<MDBInput
+											label="Username"
+											group
+											name="username"
+											type="text"
+											validate
+											onChange={this.handleInputChange}
+											labelClass="white-text"
+										/>
+										<MDBInput
+											label="Password"
+											group
+											name="password"
+											type="password"
+											autoComplete="off"
+											validate
+											onChange={this.handleInputChange}
+											labelClass="white-text"
+										/>
+									</form>
 									<MDBRow className="d-flex align-items-center mb-4">
 										<div className="text-center mb-3 col-md-12">
 											<MDBBtn

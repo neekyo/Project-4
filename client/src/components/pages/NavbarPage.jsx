@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavDropdown } from 'react-bootstrap';
 
 export default class NavbarPage extends Component {
 	render() {
@@ -39,37 +40,13 @@ export default class NavbarPage extends Component {
 								<a href="/spin">Spin</a>
 							</li>
 						</ul>
-						<div className="account">
-							<ul className="navbar-nav ml-auto nav-flex-icons account">
-								<img className="login" src="./login1.jpg" alt="" />
-								Account
-								<li className="nav-item dropdown orange">
-									<div
-										className="dropdown-toggle"
-										id="navbarDropdownMenuLink-333"
-										data-toggle="dropdown"
-										aria-haspopup="true"
-										aria-expanded="false"
-									>
-										<i className="fas fa-user" />
-									</div>
-									<div
-										className="dropdown-menu dropdown-menu-right dropdown-default"
-										aria-labelledby="navbarDropdownMenuLink-333"
-									>
-										<a className="dropdown-item" href="/signup">
-											Sign up
-										</a>
-										<a className="dropdown-item" href="/login">
-											Log in
-										</a>
-										<a className="dropdown-item" href="/profile">
-											Profile
-										</a>
-									</div>
-								</li>
-							</ul>
-						</div>
+						<i className="fas fa-user user" aria-hidden="true" />
+						<NavDropdown title="Account" id="basic-nav-dropdown">
+							<NavDropdown.Item href="/signup">Sign up</NavDropdown.Item>
+							<NavDropdown.Item href="/login">Log in</NavDropdown.Item>
+							<NavDropdown.Divider />
+							<NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+						</NavDropdown>
 					</div>
 				</nav>
 			</React.Fragment>
