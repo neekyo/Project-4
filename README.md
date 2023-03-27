@@ -2,13 +2,18 @@
     <h1 align=center>
         Brewtastic!
         <br>
+        <br>
         <img align=center src="https://github.com/neekyo/Brewtastic/blob/master/assets/prev1.png">
+        <br>
         <br>
         <img align=center src="https://github.com/neekyo/Brewtastic/blob/master/assets/prev2.png">
         <br>
+        <br>
         <img align=center src="https://github.com/neekyo/Brewtastic/blob/master/assets/prev3.png">
         <br>
+        <br>
         <img align=center src="https://github.com/neekyo/Brewtastic/blob/master/assets/prev4.png">
+        <br>
         <br>
         <img align=center src="https://github.com/neekyo/Brewtastic/blob/master/assets/prev5.png">
     </h1>
